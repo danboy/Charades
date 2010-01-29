@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag 'tenplate'
+    %link{'rel' => "alternate", 'type' => "application/rss+xml", 'title' => "RSS 2.0", 'href' => "/pages/Home.rss"}
+    - # include javascript
+    = javascript_include_tag "prototype","effects","controls","dragdrop"
+    %title Charades!
+  %body
+    #grid
+      = yield
+      %ul.nav
+        %li= link_to "play again", :controller => :welcome
+        %li= link_to "add items", :controller => :items, :action => :new
+        %li= link_to "categories", :controller => :categories
+    :javascript
+      document.observe("dom:loaded",function(ev){
+        #{yield :onReady}
+      });

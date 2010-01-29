@@ -1,0 +1,26 @@
+body
+  :background-color #222
+  :color #DDD
+  :text-align center
+  a
+    :color #d45500
+  #grid
+    :margin 1em auto
+    :padding 1em
+    :background #333
+    +rounded
+    .nav
+      li
+        :list-style none
+        :display inline-block
+        :margin .25em
+        :padding .5em
+        :background #222
+        +rounded
+    .main,
+    .rail,
+    .page,
+    .full_page,
+    .column
+      :background-color= !background_color
+      +rounded
